@@ -1,0 +1,144 @@
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font: 100% sans-serif;
+}
+#app {
+    height: 100%;
+    min-height: 100%;
+    background: #F2F1EF;
+}
+#measurements {
+    height: 100px;
+    background-color: #F5D76E;
+}
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.form * + * {
+    margin-left: 5px;
+}
+.form input[type=text] {
+    box-sizing: border-box;
+    padding: 5px;
+    flex: 0 1;
+    background: #fefaee;
+    border: 1px solid transparent;
+    text-align: center;
+    font-size: 0.875rem;
+}
+.form input[type=text]:focus {
+    border-color: #a7840c;
+    outline: 0;
+}
+label {
+    font-size: 0.875rem;
+}
+input[disabled] {
+    background: #f1f1f1;
+    color: #ccc;
+    cursor: not-allowed;
+}
+button[type=button] {
+    padding: 5px 10px;
+    border: 0;
+    background: #111;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+button[type=button]:hover {
+    background: #333;
+}
+button[type=button]:focus {
+    outline: 0;
+}
+button[disabled],
+button[disabled]:hover {
+    background: #f1f1f1;
+    color: #ccc;
+    cursor: not-allowed;
+}
+#lock.locked {
+    background: #19B5FE;
+}
+#width,
+#height {
+    width: 60px;
+}
+#output {
+    position: relative;
+    height: calc(100% - 100px);
+}
+#visual {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #C8F7C5;
+    border: 1px solid #019875;
+}
+.landscape {
+    width: 450px;
+    height: 300px;
+}
+.portrait {
+    width: 300px;
+    height: 450px;
+}
+.square {
+    width: 450px;
+    height: 450px;
+}
+#result {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 10px;
+    background: #fff;
+    color: #019875;
+    border: 1px solid #019875;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px;
+}
+#resultHeight,
+#resultWidth {
+    position: absolute;
+    width: 50px;
+    transform: translate(-50%, -50%);
+    padding: 0 10px;
+    background: #f9fef9;
+    border: 1px solid #019875;
+    color: #019875;
+    font-size: 0.875rem;
+    text-align: center;
+    line-height: 30px;
+}
+#resultHeight:focus,
+#resultWidth:focus {
+    outline: 0;
+    border: 1px solid #111;
+}
+#resultHeight {
+    left: 0;
+    top: 50%;
+}
+#resultWidth {
+    left: 50%;
+    top: 0;
+}
+.u-hidden {
+    display: none;
+}

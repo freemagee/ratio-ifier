@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ratio-ifier</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <div id="measurements">
+            <div class="form">
+                <label for="width">Width</label>
+                <input type="text" id="width" />
+                <label for="height">Height</label>
+                <input type="text" id="height" />
+                <button type="button" id="calculate">Calculate</button>
+                <button type="button" id="lock" disabled>Lock ratio</button>
+            </div>
+        </div>
+        <div id="output">
+            <div id="visual" class="u-hidden">
+                <div id="result"></div>
+                <input type="text" id="resultWidth" disabled />
+                <input type="text" id="resultHeight" disabled />
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
