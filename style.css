@@ -2,10 +2,13 @@ html,
 body {
     height: 100%;
 }
+html {
+    font-size: 87.5%;
+    font-family: sans-serif;
+}
 body {
     margin: 0;
     padding: 0;
-    font: 100% sans-serif;
 }
 #app {
     height: 100%;
@@ -13,7 +16,7 @@ body {
     background: #F2F1EF;
 }
 #measurements {
-    height: 100px;
+    height: 6rem;
     background-color: #F5D76E;
 }
 .form {
@@ -73,11 +76,11 @@ button[disabled]:hover {
 }
 #width,
 #height {
-    width: 60px;
+    width: 5rem;
 }
 #output {
     position: relative;
-    height: calc(100% - 100px);
+    height: calc(100% - 6rem);
 }
 #visual {
     position: absolute;
@@ -88,16 +91,16 @@ button[disabled]:hover {
     border: 1px solid #019875;
 }
 .landscape {
-    width: 450px;
-    height: 300px;
+    width: 80vw;
+    height: 60vh;
 }
 .portrait {
-    width: 300px;
-    height: 450px;
+    width: 60vw;
+    height: 80vh;
 }
 .square {
-    width: 450px;
-    height: 450px;
+    width: 50vh;
+    height: 50vh;
 }
 #result {
     position: absolute;
@@ -111,7 +114,7 @@ button[disabled]:hover {
     font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
-    line-height: 40px;
+    line-height: 3rem;
 }
 #resultHeight,
 #resultWidth {
@@ -124,7 +127,7 @@ button[disabled]:hover {
     color: #019875;
     font-size: 1rem;
     text-align: center;
-    line-height: 30px;
+    line-height: 2rem;
 }
 #resultHeight:focus,
 #resultWidth:focus {
@@ -143,4 +146,10 @@ button[disabled]:hover {
 }
 .u-hidden {
     display: none;
+}
+
+@media screen and (min-width: 600px) {
+    html {
+        font-size: 100%;
+    }
 }
