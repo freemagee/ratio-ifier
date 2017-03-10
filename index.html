@@ -9,18 +9,18 @@
         <div id="measurements">
             <div class="form">
                 <label for="width">Width</label>
-                <input type="text" id="width" />
+                <input type="text" id="width" tabindex="1" />
                 <label for="height">Height</label>
-                <input type="text" id="height" />
-                <button type="button" id="calculate">Calculate</button>
-                <button type="button" id="lock" disabled>Lock ratio</button>
+                <input type="text" id="height" tabindex="2" />
+                <button type="button" id="calculate" tabindex="3">Calculate</button>
+                <button type="button" id="lock" tabindex="4" disabled>Lock ratio</button>
             </div>
         </div>
         <div id="output">
             <div id="visual" class="u-hidden">
                 <div id="result"></div>
-                <input type="text" id="resultWidth" disabled />
-                <input type="text" id="resultHeight" disabled />
+                <input type="text" id="resultWidth" tabindex="5" disabled />
+                <input type="text" id="resultHeight" tabindex="6" disabled />
             </div>
         </div>
     </div>

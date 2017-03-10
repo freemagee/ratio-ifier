@@ -23,23 +23,23 @@ body {
     height: 100%;
 }
 .form * + * {
-    margin-left: 5px;
+    margin-left: 0.5em;
 }
-.form input[type=text] {
+.form input{
     box-sizing: border-box;
-    padding: 5px;
+    padding: 0.5em;
     flex: 0 1;
     background: #fefaee;
     border: 1px solid transparent;
     text-align: center;
-    font-size: 0.875rem;
+    font-size: 1rem;
 }
-.form input[type=text]:focus {
-    border-color: #a7840c;
+.form input:focus {
+    border-color: #2ECC71;
     outline: 0;
 }
 label {
-    font-size: 0.875rem;
+    font-size: 1rem;
 }
 input[disabled] {
     background: #f1f1f1;
@@ -47,20 +47,20 @@ input[disabled] {
     cursor: not-allowed;
 }
 button[type=button] {
-    padding: 5px 10px;
-    border: 0;
-    background: #111;
+    padding: 0.5em;
+    background: #f1f1f1;
     border: 1px solid transparent;
     cursor: pointer;
-    color: #fff;
+    color: #111;
     font-weight: bold;
-    font-size: 0.875rem;
+    font-size: 1rem;
 }
 button[type=button]:hover {
-    background: #333;
+    background: #2ECC71;
 }
 button[type=button]:focus {
     outline: 0;
+    border: 1px solid #2ECC71;
 }
 button[disabled],
 button[disabled]:hover {
@@ -104,11 +104,11 @@ button[disabled]:hover {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    padding: 0 10px;
+    padding: 0 0.5em;
     background: #fff;
     color: #019875;
     border: 1px solid #019875;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
     line-height: 40px;
@@ -116,13 +116,13 @@ button[disabled]:hover {
 #resultHeight,
 #resultWidth {
     position: absolute;
-    width: 50px;
+    width: 60px;
     transform: translate(-50%, -50%);
-    padding: 0 10px;
+    padding: 0 0.5em;
     background: #f9fef9;
     border: 1px solid #019875;
     color: #019875;
-    font-size: 0.875rem;
+    font-size: 1rem;
     text-align: center;
     line-height: 30px;
 }
@@ -130,6 +130,8 @@ button[disabled]:hover {
 #resultWidth:focus {
     outline: 0;
     border: 1px solid #111;
+    background: #fdf5dc;
+    color: #111;
 }
 #resultHeight {
     left: 0;

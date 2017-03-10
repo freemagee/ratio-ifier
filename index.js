@@ -73,6 +73,7 @@ var ratioLocked = false,
             itemWidth.disabled = true;
             itemHeight.disabled = true;
             resultWidth.disabled = false;
+            resultWidth.focus();
             resultHeight.disabled = false;
             lockBtn.classList.add('locked');
             lockBtn.innerText = 'Unlock ratio';
