@@ -16,41 +16,63 @@ body {
     background: #F2F1EF;
 }
 #measurements {
-    height: 6rem;
+    height: 8rem;
+    padding: 0.5rem 0;
     background-color: #F5D76E;
+}
+#output {
+    height: calc(100% - 9rem);
 }
 .form {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
     height: 100%;
+    width: 75vw;
+    margin: 0 auto;
 }
-.form * + * {
-    margin-left: 0.5em;
+.form > * + * {
+    margin-top: 0.5em;
 }
-.form input{
+.form-item {
+    display: flex;
+}
+.form label {
+    box-sizing: border-box;
+    flex: 0 1 60px;
+    padding: 0.5em;
+    font-size: 1rem;
+    text-align: right;
+}
+.form input[type=text] {
     box-sizing: border-box;
     padding: 0.5em;
-    flex: 0 1;
+    flex: 1;
     background: #fefaee;
     border: 1px solid transparent;
-    text-align: center;
+    text-align: left;
     font-size: 1rem;
 }
 .form input:focus {
     border-color: #2ECC71;
     outline: 0;
 }
-label {
-    font-size: 1rem;
-}
 input[disabled] {
     background: #f1f1f1;
     color: #ccc;
     cursor: not-allowed;
 }
+.btns-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+.btns-wrapper * + * {
+    margin-left: 5px;
+}
 button[type=button] {
+    box-sizing: border-box;
     padding: 0.5em;
+    flex: 0 1;
     background: #f1f1f1;
     border: 1px solid transparent;
     cursor: pointer;
@@ -71,16 +93,14 @@ button[disabled]:hover {
     color: #ccc;
     cursor: not-allowed;
 }
+#lock {
+    white-space: nowrap;
+}
 #lock.locked {
     background: #19B5FE;
 }
-#width,
-#height {
-    width: 5rem;
-}
 #output {
     position: relative;
-    height: calc(100% - 6rem);
 }
 #visual {
     position: absolute;
@@ -91,12 +111,12 @@ button[disabled]:hover {
     border: 1px solid #019875;
 }
 .landscape {
-    width: 80vw;
+    width: 75vw;
     height: 60vh;
 }
 .portrait {
     width: 60vw;
-    height: 80vh;
+    height: 75vh;
 }
 .square {
     width: 50vh;
@@ -119,7 +139,7 @@ button[disabled]:hover {
 #resultHeight,
 #resultWidth {
     position: absolute;
-    width: 60px;
+    width: 5rem;
     transform: translate(-50%, -50%);
     padding: 0 0.5em;
     background: #f9fef9;
@@ -147,7 +167,7 @@ button[disabled]:hover {
 #error {
     position: fixed;
     width: 100%;
-    height: 6rem;
+    height: 9rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,8 +178,50 @@ button[disabled]:hover {
     display: none;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
+    #measurements {
+        height: 6rem;
+        padding: 0;
+    }
+    #output {
+        height: calc(100% - 6rem);
+    }
+    .form {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    .form > * + * {
+        margin-top: 0;
+        margin-left: 0.5em;
+    }
+    .form div * + * {
+        margin-left: 0.5em;
+    }
+    .form label {
+        flex: 0 1;
+        padding: 0.5em 0;
+    }
+    button[type=button] {
+        flex: 1;
+    }
+    .form-item {
+        width: 33.33333%;
+    }
+    #error {
+        height: 6rem;
+    }
+}
+
+@media screen and (min-width: 800px) {
     html {
         font-size: 100%;
+    }
+    .form {
+        max-width: 50%;
+    }
+    .form input[type=text] {
+        text-align: center;
     }
 }

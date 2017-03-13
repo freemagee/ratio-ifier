@@ -13,19 +13,25 @@
     <div id="app">
         <div id="measurements">
             <div class="form">
-                <label for="width">Width</label>
-                <input type="text" id="width" tabindex="1" />
-                <label for="height">Height</label>
-                <input type="text" id="height" tabindex="2" />
-                <button type="button" id="calculate" tabindex="3">Calculate</button>
-                <button type="button" id="lock" tabindex="4" disabled>Lock ratio</button>
+                <div class="form-item">
+                    <label for="width">Width</label>
+                    <input type="text" id="width" tabindex="1" size="1" />
+                </div>
+                <div class="form-item">
+                    <label for="height">Height</label>
+                    <input type="text" id="height" tabindex="2" size="1" />
+                </div>
+                <div class="btns-wrapper">
+                    <button type="button" id="calculate" tabindex="3">Calculate</button>
+                    <button type="button" id="lock" tabindex="4" disabled>Lock ratio</button>
+                </div>
             </div>
         </div>
         <div id="output">
             <div id="visual" class="u-hidden">
                 <div id="result"></div>
-                <input type="text" id="resultWidth" tabindex="5" disabled />
-                <input type="text" id="resultHeight" tabindex="6" disabled />
+                <input type="text" id="resultWidth" tabindex="5" size="1" disabled />
+                <input type="text" id="resultHeight" tabindex="6" size="1" disabled />
             </div>
         </div>
     </div>
