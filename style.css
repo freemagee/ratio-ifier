@@ -144,6 +144,16 @@ button[disabled]:hover {
     left: 50%;
     top: 0;
 }
+#error {
+    position: fixed;
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F1A9A0;
+    text-align: center;
+}
 .u-hidden {
     display: none;
 }
