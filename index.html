@@ -11,36 +11,36 @@
 </head>
 <body>
     <div id="app">
-        <div id="measurements">
+        <div id="dimensions">
             <div class="form">
-                <div class="form-item">
-                    <label for="width">Width</label>
-                    <input type="text" id="width" tabindex="1" size="1" />
+                <div class="form__item">
+                    <label for="width" class="form__label">Width</label>
+                    <input type="text" id="width" tabindex="1" size="1" class="form__input" />
                 </div>
-                <div class="form-item">
-                    <label for="height">Height</label>
-                    <input type="text" id="height" tabindex="2" size="1" />
+                <div class="form__item">
+                    <label for="height" class="form__label">Height</label>
+                    <input type="text" id="height" tabindex="2" size="1" class="form__input" />
                 </div>
-                <div class="btns-wrapper">
-                    <button type="button" id="calculate" tabindex="3">Calculate</button>
-                    <button type="button" id="lock" tabindex="4" disabled>Lock ratio</button>
+                <div class="form__item form__item--buttons">
+                    <button type="button" id="calculate" tabindex="3" class="btn btn--primary">Calculate</button>
+                    <button type="button" id="lock" tabindex="4" class="btn btn--lock" disabled>Lock ratio</button>
                 </div>
             </div>
         </div>
         <div id="output">
             <div id="visual" class="u-hidden">
-                <div id="result">
-                    <div></div>
-                    <button id="recalculate" type="button" disabled>
-                        <svg version="1.1" id="CW" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                <div id="result" class="result">
+                    <div class="result__text"></div>
+                    <button id="recalculate" type="button" class="btn btn--image btn--recalculate" disabled>
+                        <svg version="1.1" id="recalculate__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
                         <path id="cw" d="M19.315,10h-2.372V9.795c-0.108-4.434-3.724-7.996-8.169-7.996C4.259,1.799,0.6,5.471,0.6,10
                             s3.659,8.199,8.174,8.199c1.898,0,3.645-0.65,5.033-1.738l-1.406-1.504c-1.016,0.748-2.27,1.193-3.627,1.193
                             c-3.386,0-6.131-2.754-6.131-6.15s2.745-6.15,6.131-6.15c3.317,0,6.018,2.643,6.125,5.945V10h-2.672l3.494,3.894L19.315,10z"/>
                         </svg>
                     </button>
                 </div>
-                <input type="text" id="resultWidth" tabindex="5" size="1" disabled />
-                <input type="text" id="resultHeight" tabindex="6" size="1" disabled />
+                <input type="text" id="resultWidth" tabindex="5" size="1" class="result__input result__input--width" disabled />
+                <input type="text" id="resultHeight" tabindex="6" size="1" class="result__input result__input--height" disabled />
             </div>
         </div>
     </div>

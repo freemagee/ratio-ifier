@@ -152,14 +152,14 @@ var view = {
     renderResult: function(obj) {
         this.DOM.result.children[0].dataset.ratio = obj.ratio;
         this.DOM.result.children[0].innerHTML = obj.ratio.toFixed(2);
-        this.DOM.visual.className = '';
+        this.DOM.visual.className = 'shape';
 
         if (obj.shape === 'landscape') {
-            this.DOM.visual.classList.add('landscape');
+            this.DOM.visual.classList.add('shape--landscape');
         } else if (obj.shape === 'portrait') {
-            this.DOM.visual.classList.add('portrait');
+            this.DOM.visual.classList.add('shape--portrait');
         } else {
-            this.DOM.visual.classList.add('square');
+            this.DOM.visual.classList.add('shape--square');
         }
     },
     renderRecalculatedRatio: function(obj) {
@@ -180,7 +180,7 @@ var view = {
             _this.resultWidth.disabled = false;
             _this.resultWidth.focus();
             _this.resultHeight.disabled = false;
-            _this.lockBtn.classList.add('locked');
+            _this.lockBtn.classList.add('is--locked');
             _this.lockBtn.innerText = 'Unlock ratio';
             _this.calculateBtn.disabled = true;
             _this.recalculateBtn.disabled = false;
@@ -190,7 +190,7 @@ var view = {
             _this.itemHeight.disabled = false;
             _this.resultWidth.disabled = true;
             _this.resultHeight.disabled = true;
-            _this.lockBtn.classList.remove('locked');
+            _this.lockBtn.classList.remove('is--locked');
             _this.lockBtn.innerText = 'Lock ratio';
             _this.calculateBtn.disabled = false;
             _this.recalculateBtn.disabled = true;
@@ -201,6 +201,7 @@ var view = {
         var errorText = document.createElement('span');
 
         error.id = 'error';
+        error.classList = 'alert alert--error';
         errorText.innerText = str;
 
         error.appendChild(errorText);

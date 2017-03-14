@@ -10,19 +10,24 @@ body {
     margin: 0;
     padding: 0;
 }
+
+/* Defined app sections */
 #app {
     height: 100%;
     min-height: 100%;
     background: #F2F1EF;
 }
-#measurements {
+#dimensions {
     height: 8rem;
     padding: 0.5rem 0;
     background-color: #F5D76E;
 }
 #output {
+    position: relative;
     height: calc(100% - 9rem);
 }
+
+/* Initial Form */
 .form {
     display: flex;
     flex-wrap: wrap;
@@ -34,17 +39,24 @@ body {
 .form > * + * {
     margin-top: 0.5em;
 }
-.form-item {
+.form__item {
     display: flex;
 }
-.form label {
+.form__item--buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+.form__item--buttons * + * {
+    margin-left: 5px;
+}
+.form__label {
     box-sizing: border-box;
     flex: 0 1 60px;
     padding: 0.5em;
     font-size: 1rem;
     text-align: right;
 }
-.form input[type=text] {
+.form__input {
     box-sizing: border-box;
     padding: 0.5em;
     flex: 1;
@@ -53,23 +65,18 @@ body {
     text-align: left;
     font-size: 1rem;
 }
-.form input:focus {
+.form__input:focus {
     border-color: #ccc;
     outline: 0;
 }
-input[disabled] {
+.form__input[disabled] {
     background: #f1f1f1;
     color: #ccc;
     cursor: not-allowed;
 }
-.btns-wrapper {
-    display: flex;
-    justify-content: flex-end;
-}
-.btns-wrapper * + * {
-    margin-left: 5px;
-}
-.form button[type=button] {
+
+/* Buttons */
+.btn {
     box-sizing: border-box;
     padding: 0.5em;
     flex: 0 1;
@@ -80,29 +87,77 @@ input[disabled] {
     font-weight: bold;
     font-size: 1rem;
 }
-.form button[type=button]:hover {
-    background: #2ECC71;
+.btn:hover {
+    background: #111;
+    color: #f1f1f1;
 }
-.form button[type=button]:focus {
+.btn:focus {
     outline: 0;
-    border: 1px solid #ccc;
+    background: #111;
+    color: #f1f1f1;
 }
-.form button[disabled],
-.form button[disabled]:hover {
+.btn[disabled],
+.btn[disabled]:hover {
     background: #f1f1f1;
     color: #ccc;
     cursor: not-allowed;
 }
-#lock {
+.btn--lock {
     white-space: nowrap;
 }
-#lock.locked {
-    background: #19B5FE;
+.btn--lock.is--locked {
+    background: #019875;
+    color: #fff;
 }
-#output {
-    position: relative;
+.btn--recalculate {
+    box-sizing: border-box;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5em;
+    margin-left: 0.5em;
+    border: 1px solid #019875;
+    background-color: #019875;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
-#visual {
+.btn--recalculate:hover {
+    border: 1px solid #111;
+    background-color: #111;
+}
+.btn--recalculate:focus {
+    outline: 0;
+    border: 1px solid #111;
+    background-color: #111;
+}
+.btn--recalculate[disabled],
+.btn--recalculate[disabled]:hover {
+    border: 1px solid #f1f1f1;
+    background-color: #f1f1f1;
+    cursor: not-allowed;
+}
+.btn--recalculate #recalculate__icon {
+    fill: #fff;
+}
+.btn--recalculate[disabled] #recalculate__icon {
+    fill: #ccc;
+}
+
+/* User alerts */
+.alert {
+    position: fixed;
+    width: 100%;
+    height: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.alert--error {
+    background: #F1A9A0;
+}
+
+/* Visual */
+.shape {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -110,25 +165,27 @@ input[disabled] {
     background: #C8F7C5;
     border: 1px solid #019875;
 }
-.landscape {
+.shape--landscape {
     width: 75vw;
     height: 60vh;
 }
-.portrait {
+.shape--portrait {
     width: 60vw;
     height: 75vh;
 }
-.square {
+.shape--square {
     width: 50vh;
     height: 50vh;
 }
-#result {
+
+/* Result area */
+.result {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
-#result div {
+.result__text {
     box-sizing: border-box;
     height: 3rem;
     padding: 0 0.5em;
@@ -141,38 +198,7 @@ input[disabled] {
     text-align: center;
     line-height: 3rem;
 }
-#recalculate{
-    box-sizing: border-box;
-    width: 3rem;
-    height: 3rem;
-    padding: 0.5em;
-    margin-left: 0.5em;
-    border: 1px solid #019875;
-    background-color: #019875;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-#recalculate:hover {
-    border: 1px solid #111;
-    background-color: #111;
-}
-#recalculate:focus {
-    outline: 0;
-}
-#recalculate[disabled],
-#recalculate[disabled]:hover {
-    border: 1px solid #f1f1f1;
-    background-color: #f1f1f1;
-    cursor: not-allowed;
-}
-#cw {
-    fill: #fff;
-}
-#recalculate[disabled] #cw {
-    fill: #ccc;
-}
-#resultHeight,
-#resultWidth {
+.result__input {
     position: absolute;
     width: 5rem;
     transform: translate(-50%, -50%);
@@ -184,47 +210,42 @@ input[disabled] {
     text-align: center;
     line-height: 2rem;
 }
-#resultHeight:focus,
-#resultWidth:focus {
+.result__input:focus {
     outline: 0;
     border: 1px solid #111;
     background: #fdf5dc;
     color: #111;
 }
-#resultHeight[disabled],
-#resultWidth[disabled] {
+.result__input[disabled] {
     border: 1px solid #ccc;
+    background: #f1f1f1;
     color: #555;
+    cursor: not-allowed;
 }
-#resultHeight {
+.result__input--height {
     left: 0;
     top: 50%;
 }
-#resultWidth {
+.result__input--width {
     left: 50%;
     top: 0;
 }
-#error {
-    position: fixed;
-    width: 100%;
-    height: 9rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #F1A9A0;
-    text-align: center;
-}
+
+/* Utility classes */
 .u-hidden {
     display: none;
 }
 
 @media screen and (min-width: 500px) {
-    #measurements {
+    #dimensions {
         height: 6rem;
         padding: 0;
     }
     #output {
         height: calc(100% - 6rem);
+    }
+    .alert {
+        height: 6rem;
     }
     .form {
         justify-content: center;
@@ -236,21 +257,18 @@ input[disabled] {
         margin-top: 0;
         margin-left: 0.5em;
     }
-    .form div * + * {
+    .form .form__item * + * {
         margin-left: 0.5em;
     }
-    .form label {
+    .form__item:not(.form__item--buttons) {
+        width: 33.33333%;
+    }
+    .form__label {
         flex: 0 1;
         padding: 0.5em 0;
     }
-    button[type=button] {
+    .btn {
         flex: 1;
-    }
-    .form-item {
-        width: 33.33333%;
-    }
-    #error {
-        height: 6rem;
     }
 }
 
@@ -261,7 +279,7 @@ input[disabled] {
     .form {
         max-width: 50%;
     }
-    .form input[type=text] {
+    .form__input {
         text-align: center;
     }
 }
