@@ -17,3 +17,7 @@ Use!
 
 [Ratio-ifier](https://freemagee.github.io/ratio-ifier/) is currently hosted here
 on GitHub.
+
+###Icons
+
+[Entypo](https://entypo.com)

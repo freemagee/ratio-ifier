@@ -54,7 +54,7 @@ body {
     font-size: 1rem;
 }
 .form input:focus {
-    border-color: #2ECC71;
+    border-color: #ccc;
     outline: 0;
 }
 input[disabled] {
@@ -69,7 +69,7 @@ input[disabled] {
 .btns-wrapper * + * {
     margin-left: 5px;
 }
-button[type=button] {
+.form button[type=button] {
     box-sizing: border-box;
     padding: 0.5em;
     flex: 0 1;
@@ -80,15 +80,15 @@ button[type=button] {
     font-weight: bold;
     font-size: 1rem;
 }
-button[type=button]:hover {
+.form button[type=button]:hover {
     background: #2ECC71;
 }
-button[type=button]:focus {
+.form button[type=button]:focus {
     outline: 0;
-    border: 1px solid #2ECC71;
+    border: 1px solid #ccc;
 }
-button[disabled],
-button[disabled]:hover {
+.form button[disabled],
+.form button[disabled]:hover {
     background: #f1f1f1;
     color: #ccc;
     cursor: not-allowed;
@@ -127,7 +127,12 @@ button[disabled]:hover {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+#result div {
+    box-sizing: border-box;
+    height: 3rem;
     padding: 0 0.5em;
+    float: left;
     background: #fff;
     color: #019875;
     border: 1px solid #019875;
@@ -135,6 +140,36 @@ button[disabled]:hover {
     font-weight: bold;
     text-align: center;
     line-height: 3rem;
+}
+#recalculate{
+    box-sizing: border-box;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5em;
+    margin-left: 0.5em;
+    border: 1px solid #019875;
+    background-color: #019875;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+#recalculate:hover {
+    border: 1px solid #111;
+    background-color: #111;
+}
+#recalculate:focus {
+    outline: 0;
+}
+#recalculate[disabled],
+#recalculate[disabled]:hover {
+    border: 1px solid #f1f1f1;
+    background-color: #f1f1f1;
+    cursor: not-allowed;
+}
+#cw {
+    fill: #fff;
+}
+#recalculate[disabled] #cw {
+    fill: #ccc;
 }
 #resultHeight,
 #resultWidth {
@@ -155,6 +190,11 @@ button[disabled]:hover {
     border: 1px solid #111;
     background: #fdf5dc;
     color: #111;
+}
+#resultHeight[disabled],
+#resultWidth[disabled] {
+    border: 1px solid #ccc;
+    color: #555;
 }
 #resultHeight {
     left: 0;
