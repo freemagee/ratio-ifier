@@ -18,6 +18,6 @@ Use!
 [Ratio-ifier](https://freemagee.github.io/ratio-ifier/) is currently hosted here
 on GitHub.
 
-###Icons
+### Icons
 
-[Entypo](https://entypo.com)
+Entypo pictograms by Daniel Bruce — [www.entypo.com](http://entypo.com)
